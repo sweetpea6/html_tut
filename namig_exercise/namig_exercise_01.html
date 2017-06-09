@@ -5,6 +5,27 @@
   <title>네이밍 연습 1 - gnb 영역 작업</title>
   <link rel="stylesheet" href="reset.css" />
   <link rel="stylesheet" href="namig_exercise_01.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+    $(function(){
+      $('.gnb-depth1-link').on('mouseenter', function(){
+        $(this).next('.gnb-depth2').css('display', 'block');
+      });
+
+      $('.gnb-depth1-item').on('mouseleave', function(){
+        $(this).children('.gnb-depth2').css('display', 'none');
+      })
+
+      $('.gnb-depth2-link').on('mouseenter', function(){
+        $(this).next('.gnb-depth3').css('display', 'block');
+      })
+
+      $('.gnb-depth2-item').on('mouseleave', function(){
+        $(this).children('.gnb-depth3').css('display', 'none');
+      })
+
+    });
+  </script>
 </head>
 <body>
 
@@ -15,7 +36,7 @@ Lnb : Local Navigation Bar - 사이드메뉴/로컬메뉴
 
 <nav class="gnb">
   <ul class="gnb-depth1">
-<!--
+
     <li class="gnb-depth1-item">
       <a href="#" class="gnb-depth1-link">이용안내</a>
       <ul class="gnb-depth2">
@@ -30,14 +51,14 @@ Lnb : Local Navigation Bar - 사이드메뉴/로컬메뉴
         </li>
       </ul>
     </li>
-    -->
+
 
     <li class="gnb-depth1-item">
       <a href="#" class="gnb-depth1-link">행사·공연</a>
       <ul class="gnb-depth2">
         <li class="gnb-depth2-item">
           <a href="#" class="gnb-depth2-link">행사마당</a>
-          <ul class="gnb-depth3">
+          <ul class="gnb-depth3 depth3-1">
             <li class="gnb-depth3-item">
               <a href="#" class="gnb-depth3-link">민속촌NOW</a>
             </li>
@@ -47,10 +68,9 @@ Lnb : Local Navigation Bar - 사이드메뉴/로컬메뉴
           </ul>
         </li>
         <li class="gnb-depth2-item">
-          <a href="#" class="gnb-depth3-link">공연마당</a>
-          <!--
-          <ul class="gnb-depth3">
-            <li class="gnb-depth3-item">
+          <a href="#" class="gnb-depth2-link">공연마당</a>
+          <ul class="gnb-depth3 depth3-2">
+            <li class="gnb-depth3-item depth3-2">
               <a href="#" class="gnb-depth3-link">공연시간</a>
             </li>
             <li class="gnb-depth3-item">
@@ -58,10 +78,10 @@ Lnb : Local Navigation Bar - 사이드메뉴/로컬메뉴
             </li>
           </ul>
         </li>
-        -->
       </ul>
     </li>
-<!--
+
+
     <li class="gnb-depth1-item">
       <a href="#" class="gnb-depth1-link">단체프로그램</a>
       <ul class="gnb-depth2">
@@ -79,8 +99,8 @@ Lnb : Local Navigation Bar - 사이드메뉴/로컬메뉴
       <ul class="gnb-depth2">
         <li class="gnb-depth2-item">
           <a href="#" class="gnb-depth2-link">민속마당</a>
-            <ul class="gnb-depth3">
-              <li class="gnb-depth3-item">
+            <ul class="gnb-depth3 depth3-3">
+              <li class="gnb-depth3-item depth3-3">
                 <a href="#" class="gnb-depth3-link">조선시대마을</a>
               </li>
               <li class="gnb-depth3-item">
@@ -90,7 +110,7 @@ Lnb : Local Navigation Bar - 사이드메뉴/로컬메뉴
         </li>
         <li class="gnb-depth2-item">
           <a href="#" class="gnb-depth2-link">전시마당</a>
-          <ul class="gnb-depth3">
+          <ul class="gnb-depth3 depth3-4">
             <li class="gnb-depth3-item">
               <a href="#" class="gnb-depth3-link">전통민속관</a>
             </li>
@@ -110,23 +130,14 @@ Lnb : Local Navigation Bar - 사이드메뉴/로컬메뉴
         <li class="gnb-depth2-item">
           <a href="#" class="gnb-depth2-link">전설의고향</a>
         </li>
-        <li class="gnb-depth2-item">
-          <a href="#" class="gnb-depth2-link">귀신전</a>
-        </li>
-        <li class="gnb-depth2-item">
-          <a href="#" class="gnb-depth2-link">조각공원</a>
-        </li>
-        <li class="gnb-depth2-item">
-          <a href="#" class="gnb-depth2-link">먹거리·살거리</a>
-        </li>
       </ul>
     </li>
     <li class="gnb-depth1-item">
       <a href="#" class="gnb-depth1-link">한국민속촌소개</a>
-      <ul class="gnb-depth2">
+      <ul class="gnb-depth2 last">
         <li class="gnb-depth2-item">
           <a href="#" class="gnb-depth2-link">한국민속촌소개</a>
-          <ul class="gnb-depth3">
+          <ul class="gnb-depth3 depth3-5">
             <li class="gnb-depth3-item">
               <a href="#" class="gnb-depth3-link">민속촌 소개</a>
             </li>
@@ -137,21 +148,18 @@ Lnb : Local Navigation Bar - 사이드메뉴/로컬메뉴
         </li>
         <li class="gnb-depth2-item">
           <a href="#" class="gnb-depth2-link">과거 그리고 미래</a>
-          <ul class="gnb-depth3">
+          <ul class="gnb-depth3 depth3-6">
             <li class="gnb-depth3-item">
               <a href="#" class="gnb-depth3-link">민속촌의 발자취</a>
             </li>
             <li class="gnb-depth3-item">
               <a href="#" class="gnb-depth3-link">연혁</a>
             </li>
-            <li class="gnb-depth3-item">
-              <a href="#" class="gnb-depth3-link">경영철학</a>
-            </li>
           </ul>
         </li>
       </ul>
     </li>
-    -->
+
   </ul>
 </nav>
 
