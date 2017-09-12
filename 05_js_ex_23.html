@@ -97,44 +97,44 @@
   </style>
   <script src="lib/jquery-3.2.1.min.js"></script>
   <script>
-//    $(function(){
-//      // css() 함수를 사용했을 때 => 점프 이동
-//      $('.btn-jump-right').on('click', function(){
-//        $('.box1').css({
-//          left : 300
-//        });
-//      });
-//      // animate() 함수를 사용했을 때 => 애니메이션 이동
-//      $('.btn-move-right').on('click', function(){
-//        // $().animate( CSS Property, 애니메이션 시간, 콜백함수);
-//        $('.box2').animate({
-//          left : 300
-//        }, 1000);
-//      });
-//      // CSS 속성을 한번에 적용해서 애니메이션
-//      $('.btn-start-all').on('click', function(){
-//        $('.box3').animate({
-//          width : 300,
-//          height: 300,
-//          left : 300
-//        });
-//      });
-//      // CSS 속성을 차례대로 애니메이션 - 메소드 체이닝 방법
-//      $('.btn-start-part').on('click', function(){
-//        $('.box4')
-//            .animate({width :300}, 1000)
-//            .animate({height:300}, 1000)
-//            .animate({left : 300}, 1000);
-//      });
-//      // CSS 속성을 차례대로 애니메이션 - 콜백함수 방법
-//      $('.btn-start-part2').on('click', function(){
-//        $('.box4').animate({width:100}, 1000, function(){
-//          $(this).animate({height:100}, 1000, function(){
-//            $(this).animate({left:0}, 1000);
-//          });
-//        });
-//      });
-//    });
+    $(function(){
+      // css() 함수를 사용했을 때 => 점프 이동
+      $('.btn-jump-right').on('click', function(){
+        $('.box1').css({
+          left : 300
+        });
+      });
+      // animate() 함수를 사용했을 때 => 애니메이션 이동
+      $('.btn-move-right').on('click', function(){
+        // $().animate( CSS Property, 애니메이션 시간, 콜백함수);
+        $('.box2').animate({
+          left : 300
+        }, 1000);
+      });
+      // CSS 속성을 한번에 적용해서 애니메이션
+      $('.btn-start-all').on('click', function(){
+        $('.box3').animate({
+          width : 300,
+          height: 300,
+          left : 300
+        });
+      });
+      // CSS 속성을 차례대로 애니메이션 - 메소드 체이닝 방법
+      $('.btn-start-part').on('click', function(){
+        $('.box4')
+            .animate({width :300}, 1000)
+            .animate({height:300}, 1000)
+            .animate({left : 300}, 1000);
+      });
+      // CSS 속성을 차례대로 애니메이션 - 콜백함수 방법
+      $('.btn-start-part2').on('click', function(){
+        $('.box4').animate({width:100}, 1000, function(){
+          $(this).animate({height:100}, 1000, function(){
+            $(this).animate({left:0}, 1000);
+          });
+        });
+      });
+    });
 
     // jquery 진입점은 여러번 사용할 수 있음
     $(function(){
@@ -273,71 +273,71 @@
         }
       });
 
-//      $(document).on('click', '.btn-control.pause', function(e){
-//        clearInterval(timeID);
-//        // e.target : 클릭한 실제 대상
-//        $(e.target).removeClass('pause').addClass('play');
-//        $(e.target).text('Play');
-//      });
-//      $(document).on('click', '.btn-control.play', function(e){
-//        autoRolling();
-//        // e.target : 클릭한 실제 대상
-//        $(e.target).removeClass('play').addClass('pause');
-//        $(e.target).text('Pause');
-//      });
-//      $(document).on('click', '.paging-item', function(e){
-//        // 페이지 번호 클릭시 화면 맨위로 스크롤되지 않도록 기본 동작을 막아줌.
-//        e.preventDefault();
-//        // 클릭한 요소의 인덱스 번호 : index() 함수 사용
-//        // 이벤트 대상이 on() 함수의 인자로 명시해주는 경우에 해당 대상이 $(this) 가 됨 ( 현재 : '.paging-item' )
-//
-//        var indexNumber = $(this).index('.paging-item');
-//
-//        if(currentIndex != indexNumber) {
-//
-//          if (currentIndex == 0) {
-//
-//            if (indexNumber == $('.view-image').length - 1) {
-//              nextIndex = currentIndex - 1;
-//              if (!$('.view-image').is(':animated')) {
-//                moveRight();
-//              }
-//            } else {
-//              nextIndex = currentIndex + 1;
-//              if (!$('.view-image').is(':animated')) {
-//                moveLeft();
-//              }
-//            }
-//
-//          } else if (currentIndex == $('.view-image').length - 1) {
-//            if (indexNumber == 0) {
-//              nextIndex = currentIndex + 1;
-//              if (!$('.view-image').is(':animated')) {
-//                moveLeft();
-//              }
-//            } else {
-//              nextIndex = currentIndex - 1;
-//              if (!$('.view-image').is(':animated')) {
-//                moveRight();
-//              }
-//            }
-//          } else {
-//            if (currentIndex < indexNumber) {
-//              nextIndex = currentIndex + 1;
-//              if (!$('.view-image').is(':animated')) {
-//                moveLeft();
-//              }
-//            } else {
-//              nextIndex = currentIndex - 1;
-//              if (!$('.view-image').is(':animated')) {
-//                moveRight();
-//              }
-//            }
-//          }
-//        }
-//
-//
-//      });
+      $(document).on('click', '.btn-control.pause', function(e){
+        clearInterval(timeID);
+        // e.target : 클릭한 실제 대상
+        $(e.target).removeClass('pause').addClass('play');
+        $(e.target).text('Play');
+      });
+      $(document).on('click', '.btn-control.play', function(e){
+        autoRolling();
+        // e.target : 클릭한 실제 대상
+        $(e.target).removeClass('play').addClass('pause');
+        $(e.target).text('Pause');
+      });
+      $(document).on('click', '.paging-item', function(e){
+        // 페이지 번호 클릭시 화면 맨위로 스크롤되지 않도록 기본 동작을 막아줌.
+        e.preventDefault();
+        // 클릭한 요소의 인덱스 번호 : index() 함수 사용
+        // 이벤트 대상이 on() 함수의 인자로 명시해주는 경우에 해당 대상이 $(this) 가 됨 ( 현재 : '.paging-item' )
+
+        var indexNumber = $(this).index('.paging-item');
+
+        if(currentIndex != indexNumber) {
+
+          if (currentIndex == 0) {
+
+            if (indexNumber == $('.view-image').length - 1) {
+              nextIndex = currentIndex - 1;
+              if (!$('.view-image').is(':animated')) {
+                moveRight();
+              }
+            } else {
+              nextIndex = currentIndex + 1;
+              if (!$('.view-image').is(':animated')) {
+                moveLeft();
+              }
+            }
+
+          } else if (currentIndex == $('.view-image').length - 1) {
+            if (indexNumber == 0) {
+              nextIndex = currentIndex + 1;
+              if (!$('.view-image').is(':animated')) {
+                moveLeft();
+              }
+            } else {
+              nextIndex = currentIndex - 1;
+              if (!$('.view-image').is(':animated')) {
+                moveRight();
+              }
+            }
+          } else {
+            if (currentIndex < indexNumber) {
+              nextIndex = currentIndex + 1;
+              if (!$('.view-image').is(':animated')) {
+                moveLeft();
+              }
+            } else {
+              nextIndex = currentIndex - 1;
+              if (!$('.view-image').is(':animated')) {
+                moveRight();
+              }
+            }
+          }
+        }
+
+
+      });
     });
 
   </script>
